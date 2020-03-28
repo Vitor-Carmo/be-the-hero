@@ -1,6 +1,6 @@
 const connection = require('../database/connection'); // connection com o banco 
-const crypto = require('crypto'); // usar para criar um id radom
-
+ // usar para criar um id radom
+const generateUniqueId = require('../utils/generateUniqueId');
 
 module.exports = {
 
@@ -13,7 +13,7 @@ module.exports = {
     async create(request, response){
         const { name, email, whatsapp, city, uf } = request.body;
 
-        const id = crypto.randomBytes(4).toString('HEX');  // criando um id randon
+        const id = generateUniqueId();
 
         // await: aguardar terminar a connection
         await connection('ongs').insert({

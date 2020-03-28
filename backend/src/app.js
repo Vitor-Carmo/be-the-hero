@@ -2,6 +2,8 @@ const express = require('express');
 
 const cors = require('cors');
 
+const { errors } = require('celebrate');
+
 //colocar "./" pois se não o node vai achar que é um pacote e não um arquivo. 
 const routes = require('./routes'); 
 
@@ -15,7 +17,9 @@ app.use(express.json());
 // aqui ele vai usar o modulo routes
 app.use(routes);
 
-//escutando a porta 3333
-app.listen(3333);
+app.use(errors());
+
+module.exports = app;
+
 
 
