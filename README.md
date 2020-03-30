@@ -90,3 +90,8 @@ ou emulador Android/iOS.
 <li><a href="https://rocketseat.com.br"> Rocketseat </a></li>
 <li><a href="https://github.com/diego3g"> Diego Fernandes </a></li>
 </ul>
+
+<h3 align="center">
+<img alt="Be the Hero" src="frontend/src/assets/heroes.png" width="550px" />
+</h3>
+
