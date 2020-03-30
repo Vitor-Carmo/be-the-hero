@@ -12,11 +12,16 @@ const SessionController = require('./controllers/SessionController');
 const routes = express.Router();
 
 
-routes.post('/sessions', SessionController.create);  //fazer rota **
+routes.post('/sessions', celebrate({
+    [Segments.BODY] : Joi.object().keys({
+        id: Joi.string().required()
+    })
+}) ,SessionController.create);
+
 
 
 // retornar os dados cadastrados
-routes.get('/ongs', OngController.index); //fazer rota **
+routes.get('/ongs', OngController.index);
 
 
 /* cadastrar ongs
